@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 class="logo">Market<span>Meet</span></h1>
+  <h2 class="subtitle">faça seu login</h2>
+
+  <div class="card">
+    <h2 class="welcome">Bem-Vindo de Volta</h2>
+    <p class="description">entre na sua conta para descobrir produtos incríveis</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="username">E-mail ou Nome de usuário</label>
+      <input 
+        type="text" 
+        id="username"
+        formControlName="username" 
+        placeholder="Digite seu e-mail ou usuário"
+        [class.error]="isFieldInvalid('username')"
+      />
+      <div class="error-message" *ngIf="isFieldInvalid('username')">
+        {{ getFieldError('username') }}
+      </div>
+
+      <label for="password">Senha</label>
+      <input 
+        type="password" 
+        id="password"
+        formControlName="password" 
+        placeholder="******"
+        [class.error]="isFieldInvalid('password')"
+      />
+      <div class="error-message" *ngIf="isFieldInvalid('password')">
+        {{ getFieldError('password') }}
+      </div>
+
+      <a href="#" class="forgot-password" (click)="onForgotPassword()">Esqueceu sua senha?</a>
+
+      <button 
+        type="submit" 
+        class="btn"
+        [disabled]="loginForm.invalid"
+        [class.disabled]="loginForm.invalid"
+      >
+        Entrar
+      </button>
+    </form>
+
+    <p class="signup-link">
+      Não tem uma conta? <a href="#" (click)="onSignUp()">Criar conta</a>
+    </p>
+  </div>
+</div>
