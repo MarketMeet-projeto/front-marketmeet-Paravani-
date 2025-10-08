@@ -1,12 +1,24 @@
+/* Remover scroll e ocultar scrollbar */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 /* Fundo da página */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #e7efff;
   font-family: Arial, sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Logo */
@@ -36,6 +48,20 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 350px;
   text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: none;
+}
+
+/* Ocultar scrollbar do card mas manter funcionalidade */
+.card::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.card {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE e Edge */
 }
 
 /* Título do card */
@@ -70,6 +96,7 @@ input {
   background-color: #f9faff;
   outline: none;
   transition: border 0.3s;
+  box-sizing: border-box;
 }
 input:focus {
   border: 1px solid #9b5de5;
@@ -103,6 +130,7 @@ input.error {
   cursor: pointer;
   transition: all 0.3s;
   margin-bottom: 15px;
+  box-sizing: border-box;
 }
 .btn:hover:not(.disabled) {
   background: #9b5de5;
@@ -163,4 +191,17 @@ input.error {
   .subtitle {
     font-size: 0.9rem;
   }
+}
+
+/* Reset universal para remover margens/bordas padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ocultar scrollbar globalmente */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
