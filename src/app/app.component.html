@@ -3,20 +3,20 @@
   <h2 class="subtitle">faça seu login</h2>
 
   <div class="card">
-    <h2 class="welcome">Bem-Vindo de Volta</h2>
+    <h2 class="welcome">Bem-Vindo</h2>
     <p class="description">entre na sua conta para descobrir produtos incríveis</p>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <label for="username">E-mail ou Nome de usuário</label>
+      <label for="email">E-mail</label>
       <input 
-        type="text" 
-        id="username"
-        formControlName="username" 
-        placeholder="Digite seu e-mail ou usuário"
-        [class.error]="isFieldInvalid('username')"
+        type="email" 
+        id="email"
+        formControlName="email" 
+        placeholder="Digite seu e-mail"
+        [class.error]="isFieldInvalid('email')"
       />
-      <div class="error-message" *ngIf="isFieldInvalid('username')">
-        {{ getFieldError('username') }}
+      <div class="error-message" *ngIf="isFieldInvalid('email')">
+        {{ getFieldError('email') }}
       </div>
 
       <label for="password">Senha</label>

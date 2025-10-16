@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms'; // <-- Necessário para FormGroup/FormControl
-import { CommonModule } from '@angular/common'; // <-- Necessário para *ngIf, *ngFor
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
@@ -12,8 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule, // <-- Importa para usar formGroup
-    CommonModule // <-- Importa para usar *ngIf, *ngFor
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
